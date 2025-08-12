@@ -1,0 +1,510 @@
+/* Root variables */
+:root {
+	--main-black-color: #333;
+	--main-yellow-color: #f2d815;
+	--main-blue-color: #2E1980;
+	--main-color-grey: #ececec;
+	--header-height: 4.8rem;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
+body {
+	/* 4. Add accessible line-height */
+	line-height: 1.5;
+	/* 5. Improve text rendering */
+	color: var(--main-black-color);
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Raleway', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.4rem;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+	text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+	isolation: isolate;
+}
+
+/* Headings */
+h1 {
+	text-align: center;
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: #fff;
+}
+
+h2 {
+	font-size: 1.6rem;
+	position: relative;
+	padding-left: 3rem;
+	text-transform: uppercase;
+	letter-spacing: 0;
+	line-height: 2rem;
+	margin-bottom: 1.4rem;
+}
+
+h2::before {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	content: url(images/branding.svg);
+}
+
+h3 {
+	font-size: 1.6rem;
+	text-transform: uppercase;
+}
+
+/* Lists */
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* Links */
+a {
+	text-decoration: none;
+}
+
+/* Header */
+header {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	padding: 6px 0;
+	background-color: var(--main-black-color);
+	-webkit-box-shadow: 0px 2px 6px 0px rgba(66, 68, 90, 0.1);
+	-moz-box-shadow: 0px 2px 6px 0px rgba(66, 68, 90, 0.1);
+	box-shadow: 0px 2px 6px 0px rgba(66, 68, 90, 0.1);
+}
+
+#header_inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 100;
+}
+
+#logo_wrapper {
+	z-index: 100;
+}
+
+#logo_wrapper svg {
+	fill: #000;
+}
+
+#quick-call {
+	position: absolute;
+	right: 0;
+	top: var(--header-height);
+	background-color: var(--main-yellow-color);
+	padding: 0.4rem 1rem 0.6rem 1.3rem;
+	border-bottom-left-radius: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#quick-call a {
+	color: #333;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	display: flex;
+	align-items: center;
+}
+
+/* Navigation */
+#nav_wrapper {
+	position: absolute;
+	right: -100vw;
+	top: var(--header-height);
+	width: 100%;
+	height: calc(100vh - var(--header-height));
+	z-index: 99;
+	background: #fff;
+	transition: right 0.3s ease;
+	-webkit-transition: right 0.3s ease;
+}
+
+#nav_wrapper.active {
+	right: 0;
+}
+
+#primary-menu {
+	display: flex;
+	flex-direction: column;
+	overflow-y: scroll;
+	padding-bottom: 2rem;
+}
+
+#primary-navigation {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: white;
+	height: 100%;
+}
+
+#primary-menu a {
+	text-transform: uppercase;
+	color: #333;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	-webkit-transition: color 0.3s ease;
+	padding: 18px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+	text-align: center;
+	width: 100%;
+	display: block;
+}
+
+#primary-menu li.menu-info {
+	margin-top: 2.4rem;
+}
+
+#primary-menu li.menu-info a {
+	border-bottom: 0;
+	padding: 0.6rem 0;
+	text-transform: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#primary-menu a:hover {
+	color: var(--main-yellow-color);
+}
+
+/* Mobile navigation */
+#menu-toggle {
+	background: 0 0;
+	display: flex;
+	outline: 0;
+	width: 26px;
+	height: 21px;
+	position: relative;
+	border: none;
+}
+
+#menu-toggle span {
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background-color: #fff;
+	left: 0;
+	transition: all 0.3s ease;
+}
+
+#menu-toggle > span:nth-child(1) {
+	top: 0;
+}
+
+#menu-toggle > span:nth-child(2) {
+	top: 9px;
+}
+
+#menu-toggle > span:nth-child(3) {
+	bottom: 0;
+}
+
+#menu-toggle.active > span:nth-child(1) {
+	-webkit-transform: translatey(9px) rotate(-45deg);
+	-ms-transform: translatey(9px) rotate(-45deg);
+	transform: translatey(9px) rotate(-45deg);
+}
+
+#menu-toggle.active > span:nth-child(2) {
+	opacity: 0;
+}
+
+#menu-toggle.active > span:nth-child(3) {
+	-webkit-transform: translatey(-9px) rotate(45deg);
+	-ms-transform: translatey(-9px) rotate(45deg);
+	transform: translatey(-9px) rotate(45deg);
+}
+
+/* Banner */
+#banner {
+	height: 50vw;
+	max-height: 600px;
+	background-image: url('images/serwis-telm-masatsow-krakow-skala-retardery-m.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+/* Layout */
+main {
+	padding-top: var(--header-height);
+}
+
+section {
+	padding: 2rem 0;
+}
+
+p {
+	margin-bottom: 1em;
+	letter-spacing: 0.3px;
+	text-align: justify;
+}
+
+.container {
+	width: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.container_inner {
+	padding: 0 1.2rem;
+}
+
+.mt {
+	margin-top: 4rem;
+}
+
+.ml {
+	margin-left: 1rem;
+}
+
+.ml-small {
+	margin-left: 0.5rem;
+}
+
+.page-title-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.8rem 2rem;
+	backdrop-filter: blur(2px);
+	background-color: rgba(51, 51, 51, 0.78);
+	position: absolute;
+	left: 1.4rem;
+	bottom: 1.4rem;
+	border-radius: 0.6rem;
+}
+
+.img-wrapper {
+	position: relative;
+	overflow: hidden;
+}
+
+.group .img-wrapper {
+	margin: 0 -1.2rem;
+}
+
+.grey {
+	background-color: var(--main-color-grey);
+}
+
+.img-titled {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.color-heading {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 3px 6px -5px #333;
+	border-radius: 1.2rem;
+	padding: 0.5rem 8rem;
+	transform: translateY(-50%);
+}
+
+.color-heading.yellow {
+	background-color: var(--main-yellow-color);
+}
+
+.color-heading.blue {
+	background-color: var(--main-blue-color);
+}
+
+.color-heading.yellow h3 {
+	color: #333;
+}
+
+.color-heading.blue h3 {
+	color: #fff;
+}
+
+/* Utility classes */
+.fixed {
+	position: fixed;
+}
+
+/* Other */
+#map_section {
+	background: #222a39;
+	display: flex;
+	justify-content: center;
+}
+
+@media screen and (width >= 430px) {
+}
+
+@media screen and (width >= 1024px) {
+	:root {
+		--header-height: 5.6rem;
+	}
+
+	body {
+		font-size: 1.6rem;
+	}
+
+	main {
+		padding-top: var(--header-height);
+	}
+
+	header {
+		padding: 10px 0;
+	}
+
+	#banner {
+		background-image: url('images/serwis-telm-masatsow-krakow-skala-retardery.jpg');
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.container_inner {
+		padding: 0;
+	}
+
+	#primary-menu {
+		flex-direction: row;
+		overflow-y: visible;
+		padding-bottom: 0;
+	}
+
+	#menu-toggle {
+		display: none;
+	}
+
+	#nav_wrapper {
+		position: relative;
+		justify-content: flex-end;
+		right: auto;
+		top: auto;
+		width: auto;
+		height: auto;
+		z-index: 99;
+		background: transparent;
+		transition: right 0.3s ease;
+		-webkit-transition: right 0.3s ease;
+	}
+
+	#primary-navigation {
+		width: auto;
+		flex-direction: row;
+		background: transparent;
+	}
+
+	#primary-menu li {
+		margin-left: 2.2rem;
+	}
+
+	#primary-menu a {
+		font-size: 1.6rem;
+		padding: 6px 0;
+		border-bottom: 0;
+		text-align: center;
+		width: auto;
+		display: inline-block;
+		color: #fff;
+	}
+
+	.menu-info {
+		display: none;
+	}
+
+	h1 {
+		font-size: 2.6rem;
+	}
+
+	.page-title-wrapper {
+		padding: 1.7rem 3.8rem;
+		position: relative;
+	}
+
+	#quick-call {
+		padding: 0.7rem 2.2rem 0.9rem 2.2rem;
+	}
+}
