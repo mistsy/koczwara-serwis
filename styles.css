@@ -5,6 +5,10 @@
 	--main-blue-color: #2e1980;
 	--main-color-grey: #ececec;
 	--header-height: 4.8rem;
+	--section-padding-bottom: 4rem;
+	--section-padding-top: 2rem;
+	--section-margin-top: 5rem;
+	--section-margin-bottom: 5rem;
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -438,6 +442,19 @@ p {
 	margin-top: 3rem;
 }
 
+.logos {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+  margin-top: var(--section-padding-top);
+}
+
+.logo-wrapper {
+	flex: 1 0 50%;
+	max-width: 140px;
+}
+
 /* Utility classes */
 .fixed {
 	position: fixed;
@@ -453,8 +470,32 @@ p {
 	background-color: var(--main-color-grey);
 }
 
+.pb {
+	padding-bottom: var(--section-padding-bottom);
+}
+
+.mt {
+	margin-top: var(--section-margin-top);
+}
+
+.mt-0 {
+	margin-bottom: 0;
+}
+
+.mb {
+  margin-bottom: var(--section-margin-bottom);
+}
+
+.align-center {
+	align-items: center;
+}
+
 #services {
 	background-color: var(--main-color-grey);
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* Other */
@@ -466,7 +507,7 @@ p {
 
 #strategy {
 	counter-reset: section;
-  margin-top: 2rem;
+	margin-top: 2rem;
 }
 
 .strategy-card {
@@ -497,11 +538,11 @@ p {
 }
 
 .strategy-card:nth-child(2) {
-  margin-top: 1rem;
+	margin-top: 1rem;
 }
 
 .strategy-card + .strategy-card {
-  margin-top: 3rem;
+	margin-top: 3rem;
 }
 
 .strategy-card h3 {
@@ -526,6 +567,9 @@ p {
 @media screen and (width >= 1024px) {
 	:root {
 		--header-height: 5.6rem;
+		--section-padding-bottom: 7rem;
+		--section-padding-top: 7rem;
+		--section-margin-top: 7rem;
 	}
 
 	body {
@@ -635,6 +679,10 @@ p {
 		flex-direction: row-reverse;
 	}
 
+	.column-row.reverse-desktop {
+		flex-direction: row-reverse;
+	}
+
 	.column-row > * {
 		flex: 1 0 calc(50% - 0.8rem);
 	}
@@ -659,5 +707,17 @@ p {
 
 	.group .img-wrapper {
 		margin: 0;
+	}
+
+	.pb {
+		padding-bottom: var(--section-padding-bottom);
+	}
+
+	.pt {
+		padding-top: var(--section-padding-top);
+	}
+
+	.mt {
+		margin-top: var(--section-margin-top);
 	}
 }
