@@ -4,6 +4,9 @@
 	--main-yellow-color: #f2d815;
 	--main-blue-color: #2e1980;
 	--main-color-grey: #ececec;
+	--background-yellow: rgba(242, 216, 21, 0.03);
+	--background-blue: rgba(46, 25, 128, 0.03);
+	--background-dark-grey: #3b3b3b;
 	--header-height: 4.8rem;
 	--section-padding-bottom: 4rem;
 	--section-padding-top: 2rem;
@@ -47,7 +50,7 @@ body {
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 }
 
 /* 6. Improve media defaults */
@@ -90,7 +93,6 @@ h4,
 h5,
 h6 {
 	text-wrap: balance;
-	text-transform: uppercase;
 	letter-spacing: 0.5px;
 }
 
@@ -108,6 +110,7 @@ h1 {
 	font-size: 1.6rem;
 	font-weight: 700;
 	color: #fff;
+	text-transform: uppercase;
 }
 
 h2 {
@@ -130,7 +133,6 @@ h2::before {
 
 h3 {
 	font-size: 1.6rem;
-	text-transform: uppercase;
 }
 
 .heading-wrapper {
@@ -409,6 +411,10 @@ p {
 	background-color: var(--main-blue-color);
 }
 
+.color-heading h3 {
+	text-transform: uppercase;
+}
+
 .color-heading.yellow h3 {
 	color: #333;
 }
@@ -447,12 +453,44 @@ p {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
-  margin-top: var(--section-padding-top);
+	margin-top: var(--section-padding-top);
 }
 
 .logo-wrapper {
 	flex: 1 0 50%;
 	max-width: 140px;
+}
+
+.icon-row {
+	display: flex;
+	align-items: flex-start;
+	gap: 2rem;
+}
+
+.contact-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.contact-wrapper a {
+	display: inline-flex;
+	align-items: center;
+  margin-top: 2rem;
+}
+
+.contact-wrapper a svg {
+  margin-right: 1.8rem;
+}
+
+footer {
+	font-size: 1.2rem;
+	text-align: center;
+	padding: 2rem 0;
+	color: #fff;
+	background-color: var(--background-dark-grey);
 }
 
 /* Utility classes */
@@ -483,7 +521,7 @@ p {
 }
 
 .mb {
-  margin-bottom: var(--section-margin-bottom);
+	margin-bottom: var(--section-margin-bottom);
 }
 
 .align-center {
@@ -495,7 +533,15 @@ p {
 }
 
 .text-center {
-  text-align: center;
+	text-align: center;
+}
+
+.bg-yellow-mobile {
+	background-color: var(--background-yellow);
+}
+
+.bg-blue {
+	background-color: var(--background-blue);
 }
 
 /* Other */
@@ -525,7 +571,7 @@ p {
 	content: counter(section);
 	left: -1rem;
 	top: -1rem;
-	background-color: #3b3b3b;
+	background-color: var(--background-dark-grey);
 	color: #fff;
 	display: flex;
 	justify-content: center;
@@ -719,5 +765,13 @@ p {
 
 	.mt {
 		margin-top: var(--section-margin-top);
+	}
+
+	.bg-yellow-mobile {
+		background-color: transparent;
+	}
+
+	.bg-yellow-desktop {
+		background-color: var(--background-yellow);
 	}
 }
