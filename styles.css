@@ -467,22 +467,70 @@ p {
 	gap: 2rem;
 }
 
+.map-section {
+	background-color: #272f3e;
+	padding: 0;
+}
+
+#map-wrapper {
+	position: relative;
+}
+
+.map-logo {
+	position: absolute;
+	left: 15%;
+	top: 10%;
+}
+
+.map-city {
+	color: white;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 2rem;
+	left: 36%;
+	position: absolute;
+	bottom: 17%;
+}
+
+.map-distance {
+	border: none;
+	border-top: 1px dashed #fff;
+	color: #fff;
+	height: 1px;
+	width: 33%;
+	position: absolute;
+	transform: rotate(75deg);
+	left: 39%;
+	top: 24%;
+	transform-origin: left;
+}
+
+.map-distance:after {
+	position: absolute;
+	content: '20 km';
+	color: #fff;
+	transform: rotate(-75deg);
+	transform-origin: left;
+	left: 49%;
+	bottom: 0;
+}
+
 .contact-wrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-  text-align: center;
-  margin: 2rem 0;
+	text-align: center;
+	margin: 2rem 0;
 }
 
 .contact-wrapper a {
 	display: inline-flex;
 	align-items: center;
-  margin-top: 2rem;
+	margin-top: 2rem;
 }
 
 .contact-wrapper a svg {
-  margin-right: 1.8rem;
+	margin-right: 1.8rem;
 }
 
 footer {
