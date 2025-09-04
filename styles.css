@@ -133,6 +133,11 @@ h2::before {
 
 h3 {
 	font-size: 1.6rem;
+  margin-bottom: 1em;
+}
+
+.strategy-card h3 {
+  margin-bottom: 0;
 }
 
 .heading-wrapper {
@@ -145,6 +150,15 @@ ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+
+ul.classic {
+  list-style: disc;
+	padding: 0 0 0 4rem;
+}
+
+ul.classic li + li {
+  margin-top: 1em;
 }
 
 /* Links */
@@ -413,6 +427,7 @@ p {
 
 .color-heading h3 {
 	text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 .color-heading.yellow h3 {
@@ -427,6 +442,7 @@ p {
 	display: flex;
 	align-items: flex-start;
 	gap: 2rem;
+  text-align: justify;
 }
 
 .info-list li + li {
@@ -474,6 +490,14 @@ p {
 
 #map-wrapper {
 	position: relative;
+}
+
+.map-overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .map-logo {
@@ -592,6 +616,14 @@ footer {
 	background-color: var(--background-blue);
 }
 
+.padding {
+  padding: 2rem;
+}
+
+.pvertical {
+  padding: 2rem 0;
+}
+
 /* Other */
 #map_section {
 	background: #222a39;
@@ -655,7 +687,42 @@ footer {
 	margin-top: 0.5em;
 }
 
+.glide-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	margin-top: 2rem;
+}
+
+.glide-buttons > button {
+  border: 1px solid #3B3B3B;
+  border-radius: 2rem;
+  width: 2rem;
+  height: 2rem;
+  transition: background-color ease 0.3s;
+}
+
+.glide-buttons > button.glide__bullet--active {
+  background-color: #3B3B3B;
+}
+
 @media screen and (width >= 430px) {
+	.map-logo {
+		left: 33%;
+		top: 19%;
+	}
+
+	.map-distance {
+		width: 22%;
+		left: 41%;
+		top: 25%;
+	}
+
+	.map-city {
+		left: 43%;
+		bottom: 30%;
+	}
 }
 
 @media screen and (width >= 1024px) {
@@ -745,6 +812,10 @@ footer {
 		position: relative;
 	}
 
+  .info-list li {
+    text-align: left;
+  }
+
 	#quick-call {
 		padding: 0.7rem 2.2rem 0.9rem 2.2rem;
 	}
@@ -821,5 +892,21 @@ footer {
 
 	.bg-yellow-desktop {
 		background-color: var(--background-yellow);
+	}
+
+	.map-logo {
+		left: 33%;
+		top: 19%;
+	}
+
+	.map-distance {
+		width: 22%;
+		left: 41%;
+		top: 25%;
+	}
+
+	.map-city {
+		left: 43%;
+		bottom: 30%;
 	}
 }
