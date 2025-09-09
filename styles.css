@@ -8,8 +8,8 @@
 	--background-blue: rgba(46, 25, 128, 0.03);
 	--background-dark-grey: #3b3b3b;
 	--header-height: 4.8rem;
-  --slider-width: 375px;
-  --slider-height: 300px;
+	--slider-width: 375px;
+	--slider-height: 300px;
 	--section-padding-bottom: 4rem;
 	--section-padding-top: 2rem;
 	--section-margin-top: 5rem;
@@ -135,11 +135,11 @@ h2::before {
 
 h3 {
 	font-size: 1.6rem;
-  margin-bottom: 1em;
+	margin-bottom: 1em;
 }
 
 .strategy-card h3 {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .heading-wrapper {
@@ -155,12 +155,12 @@ ul {
 }
 
 ul.classic {
-  list-style: disc;
+	list-style: disc;
 	padding: 0 0 0 4rem;
 }
 
 ul.classic li + li {
-  margin-top: 1em;
+	margin-top: 1em;
 }
 
 /* Links */
@@ -429,7 +429,7 @@ p {
 
 .color-heading h3 {
 	text-transform: uppercase;
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .color-heading.yellow h3 {
@@ -444,7 +444,7 @@ p {
 	display: flex;
 	align-items: flex-start;
 	gap: 2rem;
-  text-align: justify;
+	text-align: justify;
 }
 
 .info-list li + li {
@@ -618,12 +618,8 @@ footer {
 	background-color: var(--background-blue);
 }
 
-.padding {
-  padding: 2rem;
-}
-
 .pvertical {
-  padding: 2rem 0;
+	padding: 2rem 0;
 }
 
 /* Other */
@@ -689,6 +685,10 @@ footer {
 	margin-top: 0.5em;
 }
 
+.glide {
+	margin: 2rem 0;
+}
+
 .glide-buttons {
 	display: flex;
 	align-items: center;
@@ -698,15 +698,15 @@ footer {
 }
 
 .glide-buttons > button {
-  border: 1px solid #3B3B3B;
-  border-radius: 2rem;
-  width: 2rem;
-  height: 2rem;
-  transition: background-color ease 0.3s;
+	border: 1px solid #3b3b3b;
+	border-radius: 2rem;
+	width: 2rem;
+	height: 2rem;
+	transition: background-color ease 0.3s;
 }
 
 .glide-buttons > button.glide__bullet--active {
-  background-color: #3B3B3B;
+	background-color: #3b3b3b;
 }
 
 @media screen and (width >= 430px) {
@@ -752,6 +752,10 @@ footer {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+
+	section {
+		padding: 3rem 0;
 	}
 
 	.container_inner {
@@ -814,9 +818,9 @@ footer {
 		position: relative;
 	}
 
-  .info-list li {
-    text-align: left;
-  }
+	.info-list li {
+		text-align: left;
+	}
 
 	#quick-call {
 		padding: 0.7rem 2.2rem 0.9rem 2.2rem;
@@ -872,6 +876,14 @@ footer {
 		background-color: transparent;
 	}
 
+	#contact .column-row {
+		margin-top: 3rem;
+	}
+
+  #telms .column-row {
+    margin-top: 2rem;
+  }
+
 	.group .img-wrapper {
 		margin: 0;
 	}
@@ -910,5 +922,9 @@ footer {
 	.map-city {
 		left: 43%;
 		bottom: 30%;
+	}
+
+	.padding-d {
+		padding: 2rem;
 	}
 }
