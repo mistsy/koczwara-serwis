@@ -641,6 +641,7 @@ footer {
 	border-color: rgba(112, 112, 112, 0.35);
 	padding: 1.2rem 1.2rem 1.2rem 4rem;
 	position: relative;
+  margin-left: 1rem;
 }
 
 .strategy-card:before {
