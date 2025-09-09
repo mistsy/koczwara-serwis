@@ -8,6 +8,8 @@
 	--background-blue: rgba(46, 25, 128, 0.03);
 	--background-dark-grey: #3b3b3b;
 	--header-height: 4.8rem;
+  --slider-width: 375px;
+  --slider-height: 300px;
 	--section-padding-bottom: 4rem;
 	--section-padding-top: 2rem;
 	--section-margin-top: 5rem;
